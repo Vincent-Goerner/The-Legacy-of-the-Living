@@ -117,9 +117,12 @@ class World {
     }
 
 
-    clearDeadEnemies() {
+    clearObjectsOnGround() {
         if (this.deadEnemies.length > 0) {
             this.deadEnemies.splice(0, 1);
+        }
+        if (this.collidedThrowObj.length > 0) {
+            this.collidedThrowObj.splice(0, 1);
         }
     }
 
