@@ -153,13 +153,13 @@ class Archer extends MovableObject {
     */
     switchCameraDirection() {
         if (!this.otherDirection && this.world.keyboard.RIGHT) {
-            this.world.camera_x -= 35;
+            this.world.camera_x -= 10;
             if (this.world.camera_x <= -this.x + 50) {
                 this.world.camera_x = -this.x + 50
             }
         }
         if (this.otherDirection && this.world.keyboard.LEFT) {
-            this.world.camera_x += 35;
+            this.world.camera_x += 10;
             if (this.world.camera_x >= -this.x + 470) {
                 this.world.camera_x = -this.x + 470;
             }

@@ -18,6 +18,7 @@ let menuMusic = true;
 function init() {
     loadMenuAudio();
     loadGameAudio();
+    loadAudioState();
     render();
 }
 
@@ -187,15 +188,47 @@ function switchSoundIconGameMenu() {
 
 
 /**
- * Toggles the mute state for all audio elements.
- *
+ * Toggles the mute state of all audio elements on the page.
+ * 
  * @function
+ * @returns {void} 
  */
 function toggleAudio() {
     isMuted = !isMuted;
     audioElements.forEach(audio => {
         audio.muted = isMuted;
     });
+
+    saveAudioState();
+}
+
+
+/**
+ * Saves the current audio mute state to localStorage.
+ * 
+ * @function
+ * @returns {void}
+ */
+function saveAudioState() {
+    let muteAsText = JSON.stringify(isMuted);
+    localStorage.setItem('muteState', muteAsText);
+}
+
+
+/**
+ * Loads the audio mute state from localStorage.
+ * 
+ * @function
+ * @returns {void}
+ */
+function loadAudioState() {
+    let loadMuteState = localStorage.getItem('muteState');
+    if (loadMuteState) {
+        isMuted = JSON.parse(loadMuteState);
+        audioElements.forEach(audio => {
+            audio.muted = isMuted;
+        });
+    }
 }
 
 
@@ -304,7 +337,7 @@ function toggleMobileControls() {
  * @function
  */
 function screenSize() {
-    return (window.innerWidth < 770 || window.innerHeight < 500) ? 'mobile' : 'desktop';
+    return (window.innerWidth < 1025 || window.innerHeight < 1025) ? 'mobile' : 'desktop';
 }
 
 

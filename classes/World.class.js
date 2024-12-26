@@ -54,6 +54,21 @@ class World {
 
 
     /**
+    * Adjusts the hitboxes of the character and the enemies in the level.
+    * 
+    * @function setHitbox
+    * @memberof GameWorld
+    * @returns {void} This method does not return a value.
+    */
+    setHitbox() {
+        this.character.hitboxX += this.character.hitboxOffset;
+        this.level.enemies.forEach(enemy => {
+            enemy.hitboxX -= enemy.hitboxOffset;
+        })
+    }
+
+
+    /**
     * Loops through the enemies in the level and plays the walking sound for enemies 
     * that are moving and within a specific range of the character.
     * 
@@ -73,21 +88,6 @@ class World {
 
 
     /**
-    * Adjusts the hitboxes of the character and the enemies in the level.
-    * 
-    * @function setHitbox
-    * @memberof GameWorld
-    * @returns {void} This method does not return a value.
-    */
-    setHitbox() {
-        this.character.hitboxX += this.character.hitboxOffset;
-        this.level.enemies.forEach(enemy => {
-            enemy.hitboxX -= enemy.hitboxOffset;
-        })
-    }
-
-
-    /**
     * Starts and manages periodic updates for various game functions.
     * 
     * @function run
@@ -95,6 +95,9 @@ class World {
     * @returns {void} This method does not return a value.
     */
     run() {
+        setStoppableIntervall(() => {
+            this.clearDeadEnemies();
+        }, 5000);
         setStoppableIntervall(() => {
             this.regenerateEnergy();
             this.checkCharacterCollisions();
@@ -111,6 +114,13 @@ class World {
             this.checkAttackCollisions();
             this.backgroundMoving();
         }, 1000 / 60);
+    }
+
+
+    clearDeadEnemies() {
+        if (this.deadEnemies.length > 0) {
+            this.deadEnemies.splice(0, 1);
+        }
     }
 
 

@@ -87,8 +87,8 @@ class EndBoss extends MovableObject {
     isSpecialAttacking = false;
 
     health = 200;
-    collision = 10;
-    damageNormalAttack = 20;
+    collision = 5;
+    damageNormalAttack = 15;
     specialDamage = 50;
 
     constructor() {
