@@ -96,7 +96,7 @@ class World {
     */
     run() {
         setStoppableIntervall(() => {
-            this.clearDeadEnemies();
+            this.clearObjectsOnGround();
         }, 5000);
         setStoppableIntervall(() => {
             this.regenerateEnergy();
@@ -117,6 +117,13 @@ class World {
     }
 
 
+    /**
+    * Delete Objects on Ground.
+    * 
+    * @function regenerateEnergy
+    * @memberof GameWorld
+    * @returns {void} This method does not return a value.
+    */
     clearObjectsOnGround() {
         if (this.deadEnemies.length > 0) {
             this.deadEnemies.splice(0, 1);
