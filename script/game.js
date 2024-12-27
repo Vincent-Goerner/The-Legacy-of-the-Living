@@ -268,16 +268,6 @@ function toggleOverlay() {
 
 
 /**
- * Requests fullscreen mode for the screen container.
- *
- * @function
- */
-function fullscreen() {
-    document.getElementById('screen-div').requestFullscreen();
-}
-
-
-/**
  * Disables a button for 2 seconds before enabling it again.
  * 
  * @param {string} id - The ID of the button element to be delayed.
@@ -320,10 +310,10 @@ function stopIntervall() {
  * @function
  */
 function toggleMobileControls() {
-    if (screenSize() == 'mobile' && gameStarted) {
+    if (screenSize() === 'mobile' && gameStarted) {
         document.getElementById('mobile-controls').classList.remove('d-none');
     } else {
-        if (screenSize() == 'desktop' && gameStarted) {
+        if (screenSize() === 'desktop' && gameStarted) {
             document.getElementById('mobile-controls').classList.add('d-none');
         }
     }
@@ -337,7 +327,7 @@ function toggleMobileControls() {
  * @function
  */
 function screenSize() {
-    return (window.innerWidth < 1025 || window.innerHeight < 1025) ? 'mobile' : 'desktop';
+    return (window.innerWidth < 1025 || window.innerHeight < 550) ? 'mobile' : 'desktop';
 }
 
 

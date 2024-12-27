@@ -281,7 +281,6 @@ function loadOverlay() {
     document.getElementById('overlay').innerHTML = '';
     document.getElementById('overlay').innerHTML += /*html*/`
         <img class="game-menu" src="./assets/img/menu.png" onclick="loadGameMenu(), toggleOverlay(), toggleGameOverlay(), playPauseSound()">
-        <img class="game-fullscreen" src="./assets/img/fullscreen.svg" onclick="fullscreen()">
         <div id="mobile-controls" class="d-none">
             <button id="mobile-left" class="mobile-controls mobile-left"><</button>
             <button id="mobile-right" class="mobile-controls mobile-right">></button>
