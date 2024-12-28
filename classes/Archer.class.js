@@ -107,7 +107,6 @@ class Archer extends MovableObject {
         this.animate();
     }
 
-
     /**
     * Starts two intervals to animate and update the player actions and animations.
     * 
@@ -123,7 +122,6 @@ class Archer extends MovableObject {
             this.playerAnimations();
         }, 1000 / 12);
     }
-
 
     /**
     * Handles player actions such as movement, jumping, and attacks if certain conditions are met.
@@ -142,7 +140,6 @@ class Archer extends MovableObject {
             this.playerHeavyAttack();
         }
     }
-
 
     /**
     * Switches the camera direction based on player movement and camera constraints.
@@ -165,7 +162,6 @@ class Archer extends MovableObject {
             }
         }
     }
-
 
     /**
     * Handles the player's movement based on keyboard input and level boundaries.
@@ -190,7 +186,6 @@ class Archer extends MovableObject {
         }
     }
 
-
     /**
     * Handles the player's jump action when the spacebar is pressed.
     * 
@@ -206,7 +201,6 @@ class Archer extends MovableObject {
             }, 1100);
         }
     }
-
 
     /**
     * Handles the player's special attack when the throw button is pressed.
@@ -230,7 +224,6 @@ class Archer extends MovableObject {
         }
     }
 
-
     /**
     * Plays the sound effects and triggers the creation of a throwable object for the special attack.
     * 
@@ -247,7 +240,6 @@ class Archer extends MovableObject {
             this.createThrowableObj();
         }, 950);
     }
-
 
     /**
     * Handles the player's normal attack when the attack button is pressed.
@@ -297,7 +289,6 @@ class Archer extends MovableObject {
         }
     }
 
-
     /**
     * Handles the player's animations based on game state and player actions.
     * 
@@ -319,7 +310,6 @@ class Archer extends MovableObject {
         }
     }
 
-
     /**
     * Handles the player's movement animation based on keyboard input.
     * 
@@ -338,7 +328,6 @@ class Archer extends MovableObject {
         }
     }
 
-
     /**
     * Handles the player's jump animation when the player is above the ground.
     * 
@@ -353,7 +342,6 @@ class Archer extends MovableObject {
         }
     }
 
-
     /**
     * Handles the player's hurt animation when the player is hurt.
     * 
@@ -367,7 +355,6 @@ class Archer extends MovableObject {
             this.animateImages(this.IMAGES_HIT);
         }
     }
-
 
     /**
     * Handles the player's attack animations based on the type of attack being performed.
@@ -387,7 +374,6 @@ class Archer extends MovableObject {
             this.playAnimationOnce(this.IMAGES_HEAVY_ATTACK);
         }
     }
-
 
     /**
     * Handles the player's death animation and sound when the player dies.

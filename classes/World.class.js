@@ -30,7 +30,6 @@ class World {
         this.run();
     }
 
-
     /**
     * Assigns the current world context to the character, enemies, 
     * collectable arrows, and collectable coins in the level.
@@ -52,7 +51,6 @@ class World {
         });
     }
 
-
     /**
     * Adjusts the hitboxes of the character and the enemies in the level.
     * 
@@ -66,7 +64,6 @@ class World {
             enemy.hitboxX -= enemy.hitboxOffset;
         })
     }
-
 
     /**
     * Loops through the enemies in the level and plays the walking sound for enemies 
@@ -85,7 +82,6 @@ class World {
             })
         }, 1000 / 60);
     }
-
 
     /**
     * Starts and manages periodic updates for various game functions.
@@ -116,7 +112,6 @@ class World {
         }, 1000 / 60);
     }
 
-
     /**
     * Delete Objects on Ground.
     * 
@@ -132,7 +127,6 @@ class World {
             this.collidedThrowObj.splice(0, 1);
         }
     }
-
 
     /**
     * Regenerates the character's energy when it's below a certain threshold.
@@ -152,7 +146,6 @@ class World {
         }
     }
 
-
     /**
     * Checks for collisions between the character and enemies.
     * 
@@ -168,7 +161,6 @@ class World {
             }
         });
     }
-
 
     /**
     * Checks if the game has ended based on the character's health or the status of the last enemy.
@@ -193,7 +185,6 @@ class World {
         }
     }
 
-
     /**
     * Plays the boss fight music when the character is close to the last enemy in the level.
     * 
@@ -212,7 +203,6 @@ class World {
         }
     }
 
-
     /**
     * Plays or pauses the background game music based on the current game state.
     * 
@@ -229,7 +219,6 @@ class World {
             sound.pause();
         }
     }
-
 
     /**
     * Checks for collisions between the character and collectable items (arrows and coins).
@@ -255,7 +244,6 @@ class World {
         });
     }
 
-
     /**
     * Checks if enemies should pay attention to the character and move towards it.
     * 
@@ -272,7 +260,6 @@ class World {
             }
         });
     }
-
 
     /**
     * Checks for collisions between thrown objects (e.g., arrows) and enemies or the ground.
@@ -296,7 +283,6 @@ class World {
         })
     }
 
-
     /**
     * Handles the collision between a thrown object (e.g., an arrow) and an enemy.
     * 
@@ -313,7 +299,6 @@ class World {
         this.throwableObj.splice(i, 1);
         this.collidedThrowObj.push(arrow);
     }
-
 
     /**
     * Handles the logic when an enemy is killed by a throwable object.
@@ -334,7 +319,6 @@ class World {
         }
     }
 
-
     /**
     * Handles the collision of a throwable object when it hits the ground.
     * 
@@ -349,7 +333,6 @@ class World {
         this.throwableObj.splice(i, 1);
         this.collidedThrowObj.push(arrow);
     }
-
 
     /**
     * Checks for collisions between the character's attacks and the level's enemies.
@@ -375,7 +358,6 @@ class World {
         })
     }
 
-
     /**
     * Handles the collision between an enemy and a character's attack.
     * 
@@ -396,7 +378,6 @@ class World {
         this.attacks.splice(i, 1);
     }
 
-
     /**
     * Checks if an enemy is killed by an attack and handles the necessary updates.
     * 
@@ -415,7 +396,6 @@ class World {
             this.deadEnemies.push(enemy);
         }
     }
-
 
     /**
     * Handles the collision of a player attack with the character and updates health accordingly.
@@ -437,7 +417,6 @@ class World {
             }
         }
     }
-
 
     /**
     * Handles the movement and animation of background and foreground objects when the player is moving.
@@ -461,7 +440,6 @@ class World {
         }
     }
 
-
     /**
     * Clears the canvas and redraws all objects for the next frame in the game.
     * 
@@ -482,7 +460,6 @@ class World {
             self.draw()
         });
     }
-
 
     /**
     * Draws all movable objects in the game world.
@@ -505,7 +482,6 @@ class World {
         this.executeLoops(this.level.foregroundObject);
     }
 
-
     /**
     * Draws all fixed objects in the game world.
     * 
@@ -523,7 +499,6 @@ class World {
         }
     }
 
-
     /**
     * Iterates through an array of objects and adds them to the map.
     * 
@@ -537,7 +512,6 @@ class World {
             this.addToMap(object);
         });
     }
-
 
     /**
     * Draws an object onto the canvas, with optional adjustments for its direction.
@@ -562,7 +536,6 @@ class World {
         }
     }
 
-
     /**
     * Flips the provided object horizontally on the canvas.
     * 
@@ -579,7 +552,6 @@ class World {
         object.x = object.x * -1; // Spiegelt die x-Koordinate damit es an der richtigen Stelle gezeichnet wird
         object.hitboxX = object.hitboxX * -1;
     }
-
 
     /**
     * Restores the object to its original orientation after being flipped.
