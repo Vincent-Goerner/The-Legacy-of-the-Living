@@ -29,7 +29,6 @@
             <li>HTML5</li>
             <li>CSS3</li>
             <li>JavaScript (Objektorientierte Programmierung)</li>
-            <li>[Weitere verwendete Technologien, falls zutreffend]</li>
         </ul>
         <h2>Beitragende</h2>
         <p>Danke an alle Mitwirkenden! Wenn du zur Entwicklung beitragen möchtest, öffne bitte einen Pull-Request.</p>
